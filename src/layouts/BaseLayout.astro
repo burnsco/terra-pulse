@@ -1,0 +1,27 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Terra Pulse – Climate · Action · Now', description = 'Terra Pulse connects people and projects that restore ecosystems and accelerate the transition to a regenerative economy.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0f1410" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-[#0a0d0a] text-[#e8f0e6] font-sans antialiased selection:bg-[#4ade80] selection:text-[#0f1410] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#162216] via-[#0a0d0a] to-[#0a0d0a]">
+    <slot />
+  </body>
+</html>

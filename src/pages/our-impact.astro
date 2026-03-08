@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const metrics = [
+  { value: '2,847', unit: 'hectares', label: 'Land restored' },
+  { value: '12', unit: '', label: 'Partner regions' },
+  { value: '100%', unit: '', label: 'Renewable operations' },
+  { value: '47', unit: 'projects', label: 'Active initiatives' },
+];
+
+const timeline = [
+  { year: '2019', title: 'Foundation', desc: 'Terra Pulse launched with three pilot restoration projects in the Pacific Northwest.' },
+  { year: '2021', title: 'Carbon neutral', desc: 'Achieved full carbon neutrality across operations and supply chain.' },
+  { year: '2023', title: 'Scale', desc: 'Expanded to 12 regions and crossed 2,000 hectares restored.' },
+  { year: '2025', title: 'Circular pledge', desc: 'Zero-waste packaging commitment across all product lines.' },
+];
+---
+
+<BaseLayout title="Our impact – Terra Pulse" description="See how Terra Pulse restores ecosystems and drives a regenerative economy. Metrics, timeline, and verified impact.">
+  <a href="#main" class="sr-only sr-only-focusable">Skip to content</a>
+  <div class="min-h-screen flex flex-col relative overflow-hidden">
+    <!-- Subtle background effect -->
+    <div class="absolute -left-1/4 top-0 -z-10 h-[600px] w-[600px] rounded-full bg-[#4ade80]/5 blur-[120px] pointer-events-none"></div>
+
+    <div class="mx-auto w-full max-w-6xl flex-1 px-6 py-8 md:px-10 relative z-10">
+      <Nav />
+
+      <main id="main">
+        <header class="mt-20 text-center animate-fade-in-up">
+          <p class="inline-flex items-center gap-2 rounded-full border border-[#4ade80]/20 bg-[#4ade80]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#4ade80]">Our impact</p>
+          <h1 class="mt-6 text-4xl font-extrabold tracking-tight md:text-6xl">
+            Measured in <span class="bg-gradient-to-r from-[#4ade80] to-[#22c55e] bg-clip-text text-transparent">hectares and hope.</span>
+          </h1>
+          <p class="mx-auto mt-6 max-w-xl text-[#9ca89a] text-lg font-light leading-relaxed">
+            We track every hectare we restore, every tonne we offset, and every community we partner with. Transparency is non-negotiable.
+          </p>
+        </header>
+
+        <section class="mt-20 grid grid-cols-2 gap-6 md:grid-cols-4 animate-fade-in-up delay-100" aria-labelledby="metrics-heading">
+          <h2 id="metrics-heading" class="sr-only">Key metrics</h2>
+          {metrics.map((m) => (
+            <div class="relative overflow-hidden rounded-3xl border border-[#4ade80]/10 bg-[#161c14]/80 backdrop-blur-sm p-6 text-center transition-all hover:-translate-y-1 hover:border-[#4ade80]/30 hover:shadow-[0_10px_30px_-10px_rgba(74,222,128,0.15)] group glass">
+              <div class="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-[#4ade80]/5 blur-xl group-hover:bg-[#4ade80]/10 transition-colors"></div>
+              <p class="text-3xl font-black text-[#4ade80] md:text-4xl drop-shadow-md tracking-tight">{m.value}<span class="text-xl font-medium ml-1">{m.unit}</span></p>
+              <p class="mt-2 text-sm font-medium text-[#9ca89a] group-hover:text-[#e8f0e6] transition-colors">{m.label}</p>
+            </div>
+          ))}
+        </section>
+
+        <section class="mt-32 animate-fade-in-up delay-200" aria-labelledby="timeline-heading">
+          <h2 id="timeline-heading" class="text-3xl font-bold text-[#e8f0e6]">How we got here</h2>
+          <ul class="mt-10 space-y-10 relative before:absolute before:inset-0 before:left-3 before:-translate-x-px before:w-0.5 before:bg-gradient-to-b before:from-[#4ade80]/40 before:via-[#4ade80]/20 before:to-transparent md:before:left-14">
+            {timeline.map((item) => (
+              <li class="relative flex flex-col gap-4 pl-10 md:flex-row md:gap-12 md:pl-0 group">
+                <span class="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-[#161c14] md:left-11 ring-2 ring-[#4ade80]/20 group-hover:ring-[#4ade80] transition-colors">
+                  <span class="h-2 w-2 rounded-full bg-[#4ade80] shadow-[0_0_10px_rgba(74,222,128,0.5)]"></span>
+                </span>
+                <span class="text-sm font-bold text-[#4ade80] md:w-20 md:text-right mt-1.5 tracking-wider">{item.year}</span>
+                <div class="flex-1 rounded-2xl border border-[#4ade80]/10 bg-[#161c14]/50 p-6 backdrop-blur-sm transition-colors group-hover:border-[#4ade80]/30 group-hover:bg-[#161c14]/80">
+                  <h3 class="text-lg font-bold text-[#e8f0e6]">{item.title}</h3>
+                  <p class="mt-2 text-[#9ca89a] leading-relaxed">{item.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <div class="mt-32 group relative overflow-hidden rounded-3xl border border-[#4ade80]/20 shadow-2xl animate-fade-in-up delay-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#161c14] via-transparent to-transparent opacity-80 z-10"></div>
+          <img
+            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+            alt="Reforested hillside"
+            width="1200"
+            height="400"
+            class="h-72 w-full object-cover md:h-96 transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute bottom-0 left-0 right-0 z-20 glass border-x-0 border-b-0 px-6 py-6 text-center backdrop-blur-md">
+            <p class="text-sm md:text-base font-semibold text-[#4ade80] tracking-wide">
+              Third-party verified <span class="mx-2 text-white/20">|</span> Annual impact reports
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <Footer />
+  </div>
+</BaseLayout>

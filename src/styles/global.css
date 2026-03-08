@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0f1410;
+  --color-surface: #161c14;
+  --color-muted: #9ca89a;
+  --color-accent: #4ade80;
+  --color-bg: #0f1410;
+  --color-text: #e8f0e6;
+  --font-sans: 'Outfit', system-ui, ui-sans-serif, sans-serif;
+}
+
+/* Skip link: visible when focused for a11y */
+.sr-only-focusable:focus {
+  position: absolute;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  z-index: 100;
+  left: 1rem;
+  top: 1rem;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  border-radius: 9999px;
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  
+  .glass {
+    @apply bg-[#0f1410]/80 backdrop-blur-md border border-[#4ade80]/10;
+  }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

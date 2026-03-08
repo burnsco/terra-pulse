@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import ValueCard from '../components/ValueCard.astro';
+
+const values = [
+  { icon: 'sun' as const, label: 'Solar-first', detail: '100% renewable energy' },
+  { icon: 'wind' as const, label: 'Carbon neutral', detail: 'Verified offset programs' },
+  { icon: 'leaf' as const, label: 'Circular design', detail: 'Zero-waste packaging' },
+];
+---
+
+<BaseLayout>
+  <a href="#main" class="sr-only sr-only-focusable">Skip to content</a>
+
+  <div class="min-h-screen flex flex-col relative overflow-hidden">
+    <!-- Subtle background effect -->
+    <div class="absolute left-1/2 top-0 -z-10 h-[800px] w-[1000px] -translate-x-1/2 rounded-full bg-[#4ade80]/5 blur-[120px] pointer-events-none"></div>
+    
+    <div class="mx-auto w-full max-w-6xl flex-1 px-6 py-8 md:px-10 relative z-10">
+      <Nav />
+
+      <main id="main">
+      <header class="mt-24 text-center animate-fade-in-up">
+        <p class="inline-flex items-center gap-2 rounded-full border border-[#4ade80]/20 bg-[#4ade80]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#4ade80] shadow-[0_0_15px_rgba(74,222,128,0.1)]">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4ade80] opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-[#4ade80]"></span>
+          </span>
+          Climate · Action · Now
+        </p>
+        <h1 class="mt-8 text-5xl font-extrabold leading-[1.1] tracking-tight md:text-7xl lg:text-8xl">
+          Every choice
+          <br />
+          <span class="bg-gradient-to-r from-[#4ade80] via-[#22c55e] to-[#16a34a] bg-clip-text text-transparent drop-shadow-sm">
+            ripples forward.
+          </span>
+        </h1>
+        <p class="mx-auto mt-8 max-w-xl text-lg md:text-xl leading-relaxed text-[#9ca89a] font-light">
+          Terra Pulse connects people and projects that restore ecosystems and
+          accelerate the transition to a regenerative economy.
+        </p>
+        <a
+          href="/projects"
+          class="group mt-10 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#4ade80] to-[#22c55e] px-8 py-4 text-sm font-bold uppercase tracking-[0.15em] text-[#0f1410] shadow-[0_0_20px_rgba(74,222,128,0.3)] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.5)]"
+        >
+          Explore projects
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </header>
+
+      <section class="mt-32 grid grid-cols-1 gap-6 md:grid-cols-3 animate-fade-in-up delay-100" aria-labelledby="values-heading">
+        <h2 id="values-heading" class="sr-only">Our values</h2>
+        {values.map((v) => (
+          <ValueCard icon={v.icon} label={v.label} detail={v.detail} />
+        ))}
+      </section>
+
+      <div class="mt-32 group relative overflow-hidden rounded-3xl border border-[#4ade80]/20 shadow-2xl animate-fade-in-up delay-200">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#161c14] via-transparent to-transparent opacity-80 z-10"></div>
+        <img
+          src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=1200&q=80"
+          alt="Restored landscape with native vegetation"
+          width="1200"
+          height="400"
+          class="h-72 w-full object-cover md:h-96 transition-transform duration-700 group-hover:scale-105"
+          loading="lazy"
+        />
+        <div class="absolute bottom-0 left-0 right-0 z-20 glass border-x-0 border-b-0 px-6 py-6 text-center backdrop-blur-md">
+          <p class="text-sm md:text-base font-semibold text-[#4ade80] tracking-wide">
+            2,847 hectares restored <span class="mx-2 text-white/20">|</span> 12 partner regions
+          </p>
+        </div>
+      </div>
+      </main>
+    </div>
+
+    <Footer />
+  </div>
+</BaseLayout>

@@ -1,0 +1,43 @@
+---
+const currentPath = Astro.url.pathname;
+const navLinks = [
+  { href: '/our-impact', label: 'Our impact' },
+  { href: '/products', label: 'Products' },
+  { href: '/join', label: 'Join us' },
+  { href: '/projects', label: 'Projects' },
+];
+---
+<div class="sticky top-4 z-50 mx-auto max-w-5xl rounded-full glass px-6 py-4 shadow-xl transition-all duration-300 animate-fade-in-up">
+  <nav class="flex flex-wrap items-center justify-between gap-4" aria-label="Main">
+    <a href="/" class="group flex items-center gap-3 transition-opacity hover:opacity-90">
+      <div class="flex h-10 w-10 items-center justify-center rounded-full border border-[#4ade80]/30 bg-gradient-to-br from-[#4ade80]/20 to-transparent transition-transform duration-300 group-hover:scale-110 group-hover:border-[#4ade80]/50" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#4ade80]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </div>
+      <span class="text-xl font-bold tracking-tight text-[#e8f0e6]">Terra Pulse</span>
+    </a>
+    <div class="hidden gap-8 text-sm text-[#9ca89a] md:flex">
+      {navLinks.map(({ href, label }) => (
+        <a
+          href={href}
+          class:list={[
+            'relative py-2 font-medium transition-colors hover:text-[#4ade80]',
+            currentPath === href || (href !== '/' && currentPath.startsWith(href)) ? 'text-[#4ade80]' : '',
+          ]}
+        >
+          {label}
+          {currentPath === href || (href !== '/' && currentPath.startsWith(href)) ? (
+            <span class="absolute bottom-0 left-0 h-0.5 w-full bg-[#4ade80] rounded-full"></span>
+          ) : null}
+        </a>
+      ))}
+    </div>
+    <a
+      href="/join#get-involved"
+      class="rounded-full bg-gradient-to-r from-[#4ade80] to-[#22c55e] px-6 py-2.5 text-sm font-bold text-[#0f1410] shadow-[0_0_15px_rgba(74,222,128,0.3)] transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(74,222,128,0.5)]"
+    >
+      Get involved
+    </a>
+  </nav>
+</div>

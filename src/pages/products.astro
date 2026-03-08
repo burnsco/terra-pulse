@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const products = [
+  {
+    name: 'Restore Fund',
+    tagline: 'Invest in verified restoration',
+    desc: 'Direct capital to vetted reforestation and wetland projects. Minimum commitment supports one hectare for one year.',
+    cta: 'Learn more',
+    href: '/join#restore-fund',
+    img: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    name: 'Carbon Offset Pass',
+    tagline: 'Neutralize your footprint',
+    desc: 'Monthly or one-time offsets tied to Terra Pulse projects. Transparent pricing and verified retirement certificates.',
+    cta: 'Get started',
+    href: '/join#offset',
+    img: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    name: 'Partner Program',
+    tagline: 'For businesses',
+    desc: 'B2B partnerships for supply-chain neutrality, employee engagement, and co-branded impact campaigns.',
+    cta: 'Contact us',
+    href: '/contact',
+    img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80',
+  },
+];
+---
+
+<BaseLayout title="Products – Terra Pulse" description="Terra Pulse products: Restore Fund, Carbon Offset Pass, and Partner Program. Invest in verified ecosystem restoration.">
+  <a href="#main" class="sr-only sr-only-focusable">Skip to content</a>
+  <div class="min-h-screen flex flex-col relative overflow-hidden">
+    <!-- Subtle background effect -->
+    <div class="absolute inset-x-0 top-0 -z-10 h-[600px] w-full bg-gradient-to-b from-[#4ade80]/10 to-transparent pointer-events-none"></div>
+
+    <div class="mx-auto w-full max-w-6xl flex-1 px-6 py-8 md:px-10 relative z-10">
+      <Nav />
+
+      <main id="main">
+        <header class="mt-20 text-center animate-fade-in-up">
+          <p class="inline-flex items-center gap-2 rounded-full border border-[#4ade80]/20 bg-[#4ade80]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#4ade80]">Products</p>
+          <h1 class="mt-6 text-4xl font-extrabold tracking-tight md:text-6xl">
+            Tools for <span class="bg-gradient-to-r from-[#4ade80] to-[#22c55e] bg-clip-text text-transparent">regenerative action.</span>
+          </h1>
+          <p class="mx-auto mt-6 max-w-xl text-[#9ca89a] text-lg font-light leading-relaxed">
+            Whether you're an individual or a business, we offer clear ways to fund restoration and reduce your footprint.
+          </p>
+        </header>
+
+        <section class="mt-24 grid grid-cols-1 gap-8 md:grid-cols-3 animate-fade-in-up delay-100" aria-labelledby="products-heading">
+          <h2 id="products-heading" class="sr-only">Our products</h2>
+          {products.map((p) => (
+            <article class="group relative flex flex-col overflow-hidden rounded-3xl border border-[#4ade80]/10 bg-[#161c14]/60 glass transition-all duration-300 hover:-translate-y-2 hover:border-[#4ade80]/40 hover:shadow-[0_15px_40px_-15px_rgba(74,222,128,0.2)]">
+              <div class="relative h-56 overflow-hidden">
+                <div class="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-300"></div>
+                <img
+                  src={p.img}
+                  alt=""
+                  width="800"
+                  height="400"
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+              </div>
+              <div class="flex flex-1 flex-col p-8">
+                <h3 class="text-2xl font-bold text-[#e8f0e6] group-hover:text-[#4ade80] transition-colors">{p.name}</h3>
+                <p class="mt-2 text-sm font-semibold uppercase tracking-wider text-[#4ade80]">{p.tagline}</p>
+                <p class="mt-4 flex-1 text-[#9ca89a] leading-relaxed">{p.desc}</p>
+                <a
+                  href={p.href}
+                  class="mt-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#e8f0e6] transition-colors hover:text-[#4ade80]"
+                >
+                  {p.cta}
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          ))}
+        </section>
+      </main>
+    </div>
+    <Footer />
+  </div>
+</BaseLayout>

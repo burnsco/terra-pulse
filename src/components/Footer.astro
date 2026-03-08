@@ -1,0 +1,71 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="border-t border-[#4ade80]/20 bg-[#161c14] relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-t from-[#4ade80]/5 to-transparent pointer-events-none"></div>
+  <div class="mx-auto max-w-6xl px-6 py-16 md:px-10 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div class="lg:col-span-1">
+        <a href="/" class="flex items-center gap-2 group">
+          <div class="flex h-8 w-8 items-center justify-center rounded-full border border-[#4ade80]/30 bg-gradient-to-br from-[#4ade80]/20 to-transparent transition-transform duration-300 group-hover:scale-110 group-hover:border-[#4ade80]/50" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#4ade80]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <span class="text-xl font-bold tracking-tight text-[#e8f0e6]">Terra Pulse</span>
+        </a>
+        <p class="mt-4 text-sm text-[#9ca89a] leading-relaxed relative">
+          Connecting people and projects that restore ecosystems and accelerate the regenerative economy.
+        </p>
+      </div>
+
+      <div class="lg:col-span-1">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-[#e8f0e6] mb-4">Focus Areas</h3>
+        <nav class="flex flex-col gap-3 text-sm text-[#9ca89a]" aria-label="Footer Navigation">
+          <a href="/our-impact" class="transition-colors hover:text-[#4ade80]">Our impact</a>
+          <a href="/products" class="transition-colors hover:text-[#4ade80]">Products</a>
+          <a href="/projects" class="transition-colors hover:text-[#4ade80]">Projects</a>
+        </nav>
+      </div>
+
+      <div class="lg:col-span-1">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-[#e8f0e6] mb-4">Connect</h3>
+        <nav class="flex flex-col gap-3 text-sm text-[#9ca89a]" aria-label="Footer Action">
+          <a href="/join" class="transition-colors hover:text-[#4ade80]">Join us</a>
+          <a href="/contact" class="transition-colors hover:text-[#4ade80]">Contact</a>
+          <a href="#" class="transition-colors hover:text-[#4ade80]">Twitter (X)</a>
+          <a href="#" class="transition-colors hover:text-[#4ade80]">LinkedIn</a>
+        </nav>
+      </div>
+
+      <div class="lg:col-span-1">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-[#e8f0e6] mb-4">Stay updated</h3>
+        <p class="mb-4 text-sm text-[#9ca89a]">Get the latest news on restoration projects and impact reports.</p>
+        <form class="flex flex-col gap-3" action="#" method="POST" onsubmit="event.preventDefault();">
+          <input
+            type="email"
+            placeholder="Email address"
+            required
+            class="w-full rounded-xl border border-[#4ade80]/20 bg-[#0f1410]/50 px-4 py-2.5 text-sm text-[#e8f0e6] placeholder-[#9ca89a]/50 focus:border-[#4ade80] focus:outline-none focus:ring-1 focus:ring-[#4ade80]/50"
+          />
+          <button
+            type="submit"
+            class="w-full rounded-xl bg-[#4ade80]/10 border border-[#4ade80]/30 py-2.5 text-sm font-bold text-[#4ade80] transition-all hover:bg-[#4ade80] hover:text-[#0f1410] hover:shadow-[0_0_15px_rgba(74,222,128,0.3)]"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="mt-16 pt-8 border-t border-[#4ade80]/10 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-[#9ca89a]">
+        © {year} Terra Pulse. Every choice ripples forward.
+      </p>
+      <div class="flex gap-4 text-sm text-[#9ca89a]">
+        <a href="#" class="transition-colors hover:text-[#4ade80]">Privacy</a>
+        <a href="#" class="transition-colors hover:text-[#4ade80]">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>

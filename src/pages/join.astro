@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Join us – Terra Pulse" description="Get involved with Terra Pulse: donate, subscribe to the Restore Fund, offset your carbon, or partner with us.">
+  <a href="#main" class="sr-only sr-only-focusable">Skip to content</a>
+  <div class="min-h-screen flex flex-col relative overflow-hidden">
+    <!-- Subtle background effect -->
+    <div class="absolute -right-1/4 top-0 -z-10 h-[600px] w-[600px] rounded-full bg-[#4ade80]/5 blur-[120px] pointer-events-none"></div>
+
+    <div class="mx-auto w-full max-w-6xl flex-1 px-6 py-8 md:px-10 relative z-10">
+      <Nav />
+
+      <main id="main">
+        <header class="mt-20 text-center animate-fade-in-up">
+          <p class="inline-flex items-center gap-2 rounded-full border border-[#4ade80]/20 bg-[#4ade80]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#4ade80]">Join us</p>
+          <h1 class="mt-6 text-4xl font-extrabold tracking-tight md:text-6xl">
+            Your next step <span class="bg-gradient-to-r from-[#4ade80] to-[#22c55e] bg-clip-text text-transparent">matters.</span>
+          </h1>
+          <p class="mx-auto mt-6 max-w-xl text-[#9ca89a] text-lg font-light leading-relaxed">
+            Choose how you want to contribute: fund restoration, offset emissions, or bring your organization into the fold.
+          </p>
+        </header>
+
+        <section id="get-involved" class="mt-24 grid grid-cols-1 gap-8 md:grid-cols-3 animate-fade-in-up delay-100" aria-labelledby="options-heading">
+          <h2 id="options-heading" class="sr-only">Ways to get involved</h2>
+
+          <div class="group relative overflow-hidden rounded-3xl border border-[#4ade80]/20 bg-gradient-to-br from-[#161c14] to-[#0f1410] p-8 transition-all hover:-translate-y-2 hover:border-[#4ade80]/40 hover:shadow-[0_15px_40px_-15px_rgba(74,222,128,0.2)]">
+            <h3 class="text-xl font-bold uppercase tracking-wider text-[#e8f0e6] group-hover:text-[#4ade80] transition-colors">Restore Fund</h3>
+            <p class="mt-4 text-[#9ca89a] leading-relaxed">Monthly or one-time giving that goes directly to restoration projects. You choose the amount; we ensure it's deployed on the ground.</p>
+            <a href="/contact?interest=restore-fund" class="mt-8 inline-flex w-full items-center justify-center rounded-full border-2 border-[#4ade80]/50 bg-transparent px-6 py-3 text-sm font-bold text-[#e8f0e6] transition-all hover:border-[#4ade80] hover:bg-[#4ade80] hover:text-[#0f1410] hover:shadow-[0_0_20px_rgba(74,222,128,0.3)]">
+              Sign up
+            </a>
+          </div>
+
+          <div class="group relative overflow-hidden rounded-3xl border border-[#4ade80]/20 bg-gradient-to-br from-[#161c14] to-[#0f1410] p-8 transition-all hover:-translate-y-2 hover:border-[#4ade80]/40 hover:shadow-[0_15px_40px_-15px_rgba(74,222,128,0.2)]">
+            <h3 class="text-xl font-bold uppercase tracking-wider text-[#e8f0e6] group-hover:text-[#4ade80] transition-colors">Carbon offset</h3>
+            <p class="mt-4 text-[#9ca89a] leading-relaxed">Offset your travel, home, or business emissions with verified credits from Terra Pulse projects. Transparent pricing and certificates.</p>
+            <a href="/contact?interest=offset" class="mt-8 inline-flex w-full items-center justify-center rounded-full border-2 border-[#4ade80]/50 bg-transparent px-6 py-3 text-sm font-bold text-[#e8f0e6] transition-all hover:border-[#4ade80] hover:bg-[#4ade80] hover:text-[#0f1410] hover:shadow-[0_0_20px_rgba(74,222,128,0.3)]">
+              Get started
+            </a>
+          </div>
+
+          <div class="group relative overflow-hidden rounded-3xl border border-[#4ade80]/20 bg-gradient-to-br from-[#161c14] to-[#0f1410] p-8 transition-all hover:-translate-y-2 hover:border-[#4ade80]/40 hover:shadow-[0_15px_40px_-15px_rgba(74,222,128,0.2)]">
+            <h3 class="text-xl font-bold uppercase tracking-wider text-[#e8f0e6] group-hover:text-[#4ade80] transition-colors">Partnerships</h3>
+            <p class="mt-4 text-[#9ca89a] leading-relaxed">Businesses: align your brand with verified impact. We design custom programs for supply chain, events, and employee engagement.</p>
+            <a href="/contact?interest=partner" class="mt-8 inline-flex w-full items-center justify-center rounded-full border-2 border-[#4ade80]/50 bg-transparent px-6 py-3 text-sm font-bold text-[#e8f0e6] transition-all hover:border-[#4ade80] hover:bg-[#4ade80] hover:text-[#0f1410] hover:shadow-[0_0_20px_rgba(74,222,128,0.3)]">
+              Contact us
+            </a>
+          </div>
+        </section>
+
+        <div class="mt-32 group relative overflow-hidden rounded-3xl border border-[#4ade80]/20 shadow-2xl animate-fade-in-up delay-200">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#161c14] via-transparent to-transparent opacity-80 z-10"></div>
+          <img
+            src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&w=1200&q=80"
+            alt="Community volunteers planting trees"
+            width="1200"
+            height="400"
+            class="h-72 w-full object-cover md:h-96 transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute bottom-0 left-0 right-0 z-20 glass border-x-0 border-b-0 px-6 py-6 text-center backdrop-blur-md">
+            <p class="text-sm md:text-base font-semibold text-[#4ade80] tracking-wide">
+              Join 12,000+ supporters <span class="mx-2 text-white/20">|</span> Every choice ripples forward
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <Footer />
+  </div>
+</BaseLayout>
