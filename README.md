@@ -1,31 +1,29 @@
 # Terra Pulse
 
-A full-site Astro project based on the Terra Pulse demo (278-terra-pulse). Terra Pulse is presented as a real organization connecting people and projects that restore ecosystems and accelerate the transition to a regenerative economy.
+Terra Pulse is an Astro landing site for a fictional regenerative-economy organization. It presents restoration projects, impact metrics, and mission-driven product pages in a polished marketing format.
+
+## Highlights
+
+- Multi-page environmental brand concept
+- Astro-first static delivery
+- Tailwind-based visual system with lightweight interactivity
 
 ## Stack
 
-- **Astro** 5.x (static)
-- **Tailwind CSS** 4.x
-- **Bun** (package manager & runtime)
+- Astro
+- Tailwind CSS
+- Bun
 
-## Commands
+## Quick start
 
-| Command           | Action                   |
-| ----------------- | ------------------------ |
-| `bun run dev`     | Start dev server         |
-| `bun run build`   | Build for production     |
-| `bun run preview` | Preview production build |
+```bash
+bun install
+bun run dev
+```
 
-## Pages
+Build and preview:
 
-- **/** – Home (hero, values, impact stats)
-- **/our-impact** – Metrics, timeline, verification
-- **/products** – Restore Fund, Carbon Offset Pass, Partner Program
-- **/projects** – Explore restoration projects by region
-- **/join** – Get involved (Restore Fund, offset, partnerships)
-- **/contact** – Contact form and email addresses
-
-## Design
-
-- Dark green theme: `#0f1410` background, `#e8f0e6` text, `#4ade80` accent
-- Matches the original 278-TerraPulse demo styling and structure
+```bash
+bun run build
+bun run preview
+```
