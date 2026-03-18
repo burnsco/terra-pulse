@@ -8,6 +8,7 @@
     "build": "astro build",
     "deploy": "bun run build && npx wrangler deploy",
     "deploy:dry-run": "npx wrangler deploy --dry-run",
+    "cf:status": "../scripts/cf-portfolio.sh status terra-pulse",
     "preview": "astro preview",
     "lint": "oxlint",
     "format": "oxfmt",
