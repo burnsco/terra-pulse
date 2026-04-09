@@ -18,14 +18,14 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
-    "astro": "^6.0.6"
+    "astro": "^6.1.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
-    "oxfmt": "^0.41.0",
-    "oxlint": "^1.56.0",
+    "oxfmt": "^0.44.0",
+    "oxlint": "^1.59.0",
     "tailwindcss": "^4.2.2"
   },
   "lint-staged": {
@@ -34,5 +34,5 @@
       "oxfmt"
     ]
   },
-  "packageManager": "bun@1.2.0"
+  "packageManager": "bun@1.3.11"
 }
