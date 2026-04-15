@@ -6,27 +6,27 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "deploy": "bun run build && npx wrangler deploy",
-    "deploy:dry-run": "npx wrangler deploy --dry-run",
-    "cf:status": "../scripts/cf-portfolio.sh status terra-pulse",
-    "preview": "astro preview",
+    "preview": "bun run build && wrangler dev",
     "lint": "oxlint",
     "format": "oxfmt",
     "prepare": "husky",
-    "lint:fix": "oxlint --fix . && oxfmt",
-    "check": "astro check"
+    "generate-types": "wrangler types",
+    "deploy": "bun run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.13",
     "@tailwindcss/vite": "^4.2.2",
-    "astro": "^6.1.5"
+    "astro": "^6.1.7",
+    "wrangler": "^4.83.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.2",
+    "tailwindcss": "^4.2.2",
+    "oxlint": "^1.60.0",
+    "oxfmt": "^0.37.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.4.0",
-    "oxfmt": "^0.44.0",
-    "oxlint": "^1.59.0",
-    "tailwindcss": "^4.2.2"
+    "lint-staged": "^16.4.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
